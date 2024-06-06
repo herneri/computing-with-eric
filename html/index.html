@@ -1,31 +1,9 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html>
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="author" content="Eric Hernandez"/>
+{% block title %} Home {% endblock %}
 
-	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
-	<title>Home - Computing with Eric</title>
-</head>
-	
-<body>
-	<header>
-		<h1 id="website-title"> <a href="./index.html"> Computing with Eric </a> </h1>
-		
-		<div id="navigation">
-				<span class="nav-element"> <a href="./software.html"> Software</a> </span>
-				<span class="nav-element"> <a href="./hardware-projects.html"> Hardware Projects</a> </span>
-				<span class="nav-element"> <a href="https://www.github.com/herneri"> Github</a> </span>
-				<span class="nav-element"> <a href="./my-computing.html"> My Computing</a> </span>
-				<span class="nav-element"> <a href="./about-me.html"> About Me</a> </span>
-		</div>
-	</header>
+{% block main %}
+	<img id="eric-picture" src="{{ url_for("static", filename="images/eric.jpg") }}" alt="A picture of the website author" height="520" width="390"/>
 
-	<main>
-		<img id="eric-picture" src="eric.jpg" alt="A picture of the website author" height="520" width="390"/>
-
-		<p> Here you'll find all my projects, whether that be my free software or other computer related things. </p>
-	</main>
-</body>
-</html>
+	<p> Here you'll find all my projects, whether that be my free software or other computer related things. </p>
+{% endblock %}
