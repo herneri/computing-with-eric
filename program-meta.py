@@ -33,3 +33,28 @@ def get_license(path):
 		break
 
 	return license
+
+def get_github(path):
+	file = open(path + "/.git/config", "r")
+	github = ""
+	is_remote = False
+
+	for line in file:
+		if line == "[remote \"origin\"]\n":
+			is_remote = True
+			continue
+
+		if is_remote == True:
+			for char in line:
+				if char == '\n':
+					break
+				elif char == ' ':
+					github = ""
+					continue
+
+				github += char
+
+			break
+
+	file.close()
+	return github
