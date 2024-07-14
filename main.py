@@ -16,6 +16,7 @@
 
 from flask import Flask, render_template, redirect, url_for
 from os import listdir
+import programMeta
 
 app = Flask(__name__, template_folder="html")
 
@@ -35,8 +36,13 @@ def lang(lang):
 
 @app.route("/software/<lang>/<prog_name>")
 def program_name(lang, prog_name):
-	project = listdir("static/lang/" + lang.lower() + "/" + prog_name)
-	return render_template("program.html", license=None, lang=lang, line_count=None, github=None, program_name=prog_name, project=project), 200
+	path = "static/lang/" + lang.lower() + "/" + prog_name
+
+	project = listdir(path)
+	license = programMeta.get_license(path)
+	github = programMeta.get_github(path)
+
+	return render_template("program.html", license=license, lang=lang, line_count=None, github=github, program_name=prog_name, project=project), 200
 
 @app.route("/hardware-projects")
 def hardware_projects():
