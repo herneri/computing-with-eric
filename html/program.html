@@ -12,6 +12,6 @@
 	</p>
 
 	{% for file in project %}
-		<a class="project" href="{{ url_for("file", lang=lang, prog_name=program_name, file=file) }}"> {{file}} </a>
+		<a class="project" href="{{ url_for("static", filename="lang/" + lang.lower()+ "/" + program_name + "/" + file) }}"> {{file}} </a>
 	{% endfor %}
 {% endblock %}
