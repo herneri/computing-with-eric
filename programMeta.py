@@ -17,7 +17,11 @@
 """
 
 def get_license(path):
-	file = open(path + "/LICENSE")
+	try:
+		file = open(path + "/LICENSE")
+	except FileNotFoundError:
+		return None
+
 	license = ""
 	is_word = False
 
@@ -35,7 +39,11 @@ def get_license(path):
 	return license
 
 def get_github(path):
-	file = open(path + "/.git/config", "r")
+	try:
+		file = open(path + "/.git/config", "r")
+	except FileNotFoundError:
+		return None
+
 	github = ""
 	is_remote = False
 
