@@ -10,5 +10,7 @@
 		This site hosts my software files with their documentation
 		and an introduction to myself.
 	</p>
-</body>
-</html>
+
+<?php
+	require_once("footer.php");
+?>
