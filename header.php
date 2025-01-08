@@ -34,9 +34,7 @@
 		
 		<div id="navigation">
 				<span class="nav-element"> <a href="software.php"> Software</a> </span>
-				<span class="nav-element"> <a href="hardware-projects.php"> Hardware Projects</a> </span>
-				<span class="nav-element"> <a href="https://www.github.com/herneri"> Github</a> </span>
-				<span class="nav-element"> <a href="my-computing.php"> My Computing</a> </span>
+				<span class="nav-element"> <a href="tech-stack.php"> Tech Stack </a> </span>
 				<span class="nav-element"> <a href="about-me.php"> About Me</a> </span>
 		</div>
 	</header>
