@@ -50,6 +50,15 @@ p {
 	font-size: 20px;
 }
 
+.icon {
+	margin: 1%;
+}
+
+/* Helps compensate for lower posistioning. */
+#email, #linkedin {
+	margin-bottom: 2%;
+}
+
 footer {
 	margin-top: auto;
 	padding: 2%;
