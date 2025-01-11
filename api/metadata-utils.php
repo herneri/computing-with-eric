@@ -21,6 +21,25 @@
 	along with Computing with Eric.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+/*
+	Security precaution to see if user
+	is trying to traverse the filesystem.
+*/
+function validate_path($path) {
+	/* Get rid of escapes */
+	$values = explode("\\", $path);
+	$values = explode("/", implode($values));
+
+	foreach ($values as $value) {
+		switch ($value) {
+		case ".": case "..": case "~":
+			return false;
+		}
+	}
+
+	return true;
+}
+
 function get_license($path) {
 	$license = file($path . "/LICENSE");
 	$result = "";
