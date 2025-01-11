@@ -40,6 +40,17 @@ function validate_path($path) {
 	return true;
 }
 
+/* TODO: Read values from a config file */
+function is_valid_language($language_input) {
+	switch ($language_input) {
+	case "c": case "java":
+	case "python": case "shell":
+		return true;
+	}
+
+	return false;
+}
+
 function get_license($path) {
 	$license = file($path . "/LICENSE");
 	$result = "";
