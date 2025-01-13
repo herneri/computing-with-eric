@@ -29,7 +29,7 @@
 			continue;
 		}
 
-		echo('<a class="project" href="/program.php?name=' . $entry . '"> ' . $entry . ' </a>');
+		echo('<a class="project" href="/program.php?lang=' . $language . '&name=' . $entry . '"> ' . $entry . ' </a>');
 	}
 
 	closedir($dir);
